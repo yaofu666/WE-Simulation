@@ -1,0 +1,10 @@
+parm parent.prmtop
+trajin parent.rst
+trajin seg.nc
+autoimage
+
+radgyr RG   :1-56&!@H= mass nomax     out rg.dat
+
+run
+
+

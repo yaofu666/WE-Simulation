@@ -1,0 +1,28 @@
+parm parent.prmtop 
+trajin parent.rst 
+trajin seg.nc 
+autoimage 
+
+# read reference structure
+parm /scratch/tsztain_root/tsztain0/shared_data/simulations_Yao/NTL9_1-56_unfolding/CONFIG/1_ntl9_1-56.prmtop [natparm]
+reference /scratch/tsztain_root/tsztain0/shared_data/simulations_Yao/NTL9_1-56_unfolding/CONFIG/1_ntl9_1-56.rst parm [natparm] [nat]
+
+#calculate protein residue 1-56CA RMSD(pcoord1) using CPPTRAJ
+rms    RMSD :1-56@CA ref [nat]    out rmsd.dat
+
+#calculate protein native contact using CPPTRAJ
+nativecontacts name NC :1-56@CA \
+    ref [nat] \
+    distance 8.0 \
+    byresidue \
+    resoffset 4 \
+    noimage 
+run
+
+#calculate Q as pcoord2
+Q = NC[native] / 67 
+writedata Q.dat Q
+
+
+
+
