@@ -2,7 +2,6 @@
 
 WESTPA (Weighted Ensemble Simulation Toolkit with Parallelization and Analysis) is a software toolkit designed for the weighted ensemble simulation of molecular systems. It focuses on the efficient parallelization of calculations to facilitate the study of rare molecular events. Compatible with various molecular dynamics and Monte Carlo simulation engines, WESTPA provides tools for both the execution and analysis of simulations. Its primary goal is to help users simulate rare events and extract kinetic information from these events with precision and efficiency.
 
-- [Spike Simulation Scripts](https://github.com/shirleyahn/we_scripts)
 
 ## Installation
 
@@ -52,7 +51,7 @@ The `templates` folder contains WESTPA folders that can be copied, according to 
 
 ## Running WESTPA on Great Lakes
 
-If this is your first weighted ensemble (WE) simulation, we recommend starting with the walkthrough in `WESTPA/templates/jason_template_westpa_tutorial.pdf` and using `template0`.
+If this is your first weighted ensemble (WE) simulation, we recommend starting with the `template0`.
 
 ### 1. Copy the template to your working directory
 
@@ -64,8 +63,8 @@ Replace `/scratch/your_project/your_we_run` with the full path to your working d
 ```bash
 workdir="/scratch/your_project/your_we_run"
 
-~/SztainLab/WESTPA/scripts/copy_prmtop_rst.sh \
-    -b ~/SztainLab/WESTPA/templates/template0 \
+copy_prmtop_rst.sh \
+    -b ~/weighted-ensemble-simulation-tutorial/template0 \
     -c "$workdir"
 ```
 
